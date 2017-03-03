@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <ctime>
 #include "Game.h"
 
 #include "ASCII.h"
@@ -11,65 +12,66 @@ Game::Game()
 {
 }
 
+int Game::NextGuess(int minNumber, int maxNumber)
+{
+	int diff;
+
+	diff = maxNumber - minNumber;
+	int number = minNumber + (diff / 2);
+
+	return number;
+}
+
 void Game::MainFunction()
 {
+	srand(time(0));
+	int guess = rand() % 99;
+	int userInput;
+	int tryCount = 0;
+	int minNumber = 0;
+	int maxNumber = 100;
+	bool guessing = true;
+
 	system("cls");
 
 	cout << "Hello and welcome to Guess Me Number!" << endl;
-	cout << "Please pick a number and keep it to yourself" << endl;
-	cout << "Lets begin.." << endl;
-
-	for (int i = 0; i < 3; ++i)
+	cout << "Please pick a number bettween 0-99 and keep it to yourself" << endl;
+	cout << "Lets begin.." << endl << endl;
+	
+	while (guessing)
 	{
-		cout << ASCIIList[4][i] << endl;
-	}
+		cout << endl << guess;
+		//PrintNumber(45);
 
-	_sleep(2000);
-}
+		cout << endl << endl << "Is your number.." << endl;
+		cout << "1. Higher?" << endl;
+		cout << "2. Lower?" << endl;
+		cout << "3. This is my number!" << endl;
 
-void Game::Numbers(int number)
-{
-	char numZero[7][7];
-	char numOne[7][7];
+		cin >> userInput;
 
-	switch (number)
-	{ 
-	
-	case 0:
-		strcpy(numZero[0], "  ___  ");
-		strcpy(numZero[1], " / _ \ ");
-		strcpy(numZero[2], "| | | |");
-		strcpy(numZero[3], "| | | |");
-		strcpy(numZero[4], "| |_| |");
-		strcpy(numZero[5], " \___/ ");
-		strcpy(numZero[6], "       ");
-		break;
-	case 1:
-		strcpy(numOne[0], " __ ");
-		strcpy(numOne[1], "/_ |");
-		strcpy(numOne[2], " | |");
-		strcpy(numOne[3], " | |");
-		strcpy(numOne[4], " | |");
-		strcpy(numOne[5], " |_|");
-		strcpy(numOne[6], "    ");
-		break;
-
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+		if (userInput == 1)
+		{
+			tryCount++;
+			minNumber = guess;
+			guess = NextGuess(minNumber, maxNumber);
+		}
+		else if (userInput == 2)
+		{
+			tryCount++;
+			maxNumber = guess;
+			guess = NextGuess(minNumber, maxNumber);
+		}
+		else if (userInput == 3)
+		{
+			cout << "The computer guessed your number in " << tryCount << " tries.";
+			guessing = false;
+			_sleep(5000);
+		}
+		else
+		{
+			cout << "Please take this seriously, make a valid choice of higher, lower or This is my number.";
+		}
 	}
 }
 

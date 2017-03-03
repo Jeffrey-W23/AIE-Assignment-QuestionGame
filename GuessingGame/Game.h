@@ -7,7 +7,7 @@ public:
 	~Game();
 
 	void MainFunction();
-	void Numbers(int number);
+	int NextGuess(int minNumber, int maxNumber);
 
 private:
 
