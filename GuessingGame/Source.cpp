@@ -18,6 +18,9 @@ void main()
 		menu.PrintMenu();
 
 		cin >> menuOption;
+		cin.clear();
+		cin.ignore(999999, '\n');
+
 		cout << endl;
 
 		if (menuOption == 1)
@@ -32,7 +35,7 @@ void main()
 		{
 			system("cls");
 			cout << "Please enter a valid menu option dude, this isn't a game." << endl;
-			_sleep(2000);
+			cin;
 		}
 	}
 }

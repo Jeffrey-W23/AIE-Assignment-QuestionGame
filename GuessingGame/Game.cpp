@@ -40,15 +40,16 @@ void Game::MainFunction()
 	
 	while (guessing)
 	{
-		cout << endl << guess;
-		//PrintNumber(45);
+		PrintNumber(guess);
 
-		cout << endl << endl << "Is your number.." << endl;
+		cout << endl << endl << "Is ye number.." << endl;
 		cout << "1. Higher?" << endl;
 		cout << "2. Lower?" << endl;
-		cout << "3. This is my number!" << endl;
+		cout << "3. This is me number!" << endl;
 
 		cin >> userInput;
+		cin.clear();
+		cin.ignore(999999, '\n');
 
 		if (userInput == 1)
 		{
@@ -64,17 +65,27 @@ void Game::MainFunction()
 		}
 		else if (userInput == 3)
 		{
-			cout << "The computer guessed your number in " << tryCount << " tries.";
+			cout << "The computer guessed ye number in " << tryCount << " tries.";
 			guessing = false;
-			_sleep(5000);
+			cin;
 		}
 		else
 		{
-			cout << "Please take this seriously, make a valid choice of higher, lower or This is my number.";
+			cout << endl << "Please take this seriously, make a valid choice of higher, lower or This is my number.";
+			cin;
 		}
+
+		system("cls");
 	}
 }
 
 Game::~Game()
 {
 }
+
+
+
+//GOOGLE
+//C++ moving the cusor in windows console
+//center everything on the consolo c++
+
