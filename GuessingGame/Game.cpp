@@ -35,7 +35,7 @@ void Game::MainFunction()
 	system("cls");
 
 	cout << "Hello and welcome to Guess Me Number!" << endl;
-	cout << "Please pick a number bettween 0-99 and keep it to yourself" << endl;
+	cout << "Please pick a number bettween 1-99 and keep it to yourself" << endl;
 	cout << "Lets begin.." << endl << endl;
 	
 	while (guessing)
@@ -71,8 +71,11 @@ void Game::MainFunction()
 		}
 		else
 		{
-			cout << endl << "Please take this seriously, make a valid choice of higher, lower or This is my number.";
-			cin;
+			cout << endl << "Please take this seriously, make a valid choice of higher, lower or This is my number." << endl << endl;
+			cout << "Enter any value you want to return." << endl;
+			cin >> userInput;
+			cin.clear();
+			cin.ignore(999999, '\n');
 		}
 
 		system("cls");
@@ -84,6 +87,15 @@ Game::~Game()
 }
 
 
+
+//NOTES
+// do classes right, sperate vars?
+// go through all the lectures we have an make sure im doing every practise right
+// possibly seperate the program more
+
+// stop it from guessing 00 randomly.
+// once the computer has no more options end the game dont count the moves.
+// possibly have an amount of a turns the computer has to do it in to get a win
 
 //GOOGLE
 //C++ moving the cusor in windows console

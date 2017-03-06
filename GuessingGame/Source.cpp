@@ -34,8 +34,11 @@ void main()
 		else
 		{
 			system("cls");
-			cout << "Please enter a valid menu option dude, this isn't a game." << endl;
-			cin;
+			cout << "Please enter a valid menu option dude, this isn't a game." << endl << endl;
+			cout << "Enter any value you want to return." << endl;
+			cin >> menuOption;
+			cin.clear();
+			cin.ignore(999999, '\n');
 		}
 	}
 }
