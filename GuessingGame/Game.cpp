@@ -96,6 +96,7 @@ Game::~Game()
 // stop it from guessing 00 randomly.
 // once the computer has no more options end the game dont count the moves.
 // possibly have an amount of a turns the computer has to do it in to get a win
+// add music with beeps
 
 //GOOGLE
 //C++ moving the cusor in windows console
