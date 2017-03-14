@@ -1,5 +1,8 @@
 #include <iostream>
 #include "MainMenu.h"
+#include <conio.h>
+#include <stdio.h>
+#include <windows.h>
 using namespace std;
 
 MainMenu::MainMenu()
@@ -15,6 +18,11 @@ bool MainMenu::StartMenu()
 	int menuOption;
 
 	PrintMenu();
+
+	Beep(587, 500);
+	Beep(659, 500);
+	Beep(698, 500);
+	Beep(784, 500);
 
 	cin >> menuOption;
 	cin.clear();
@@ -33,12 +41,9 @@ bool MainMenu::StartMenu()
 	}
 	else
 	{
-		system("cls");
-		cout << "Please enter a valid menu option dude, this isn't a game." << endl << endl;
-		cout << "Enter any value you want to return." << endl;
-		cin >> menuOption;
-		cin.clear();
-		cin.ignore(999999, '\n');
+		cout << "                  PLEASE ENTER A VALID MENU OPTION DUDE, THIS ISN'T A GAME." << endl << endl;
+		cout << "                  PRESS ANY KEY TO CONTINUE..." << endl;
+		_getch();
 		return true;
 	}
 }
@@ -76,8 +81,10 @@ void MainMenu::PrintMenu()
 	cout << "                  |                                                                             |" << endl;
 	cout << "                  |  TO NAVIGATE THE MENU PLEASE TYPE ONE OF THE NUMBERS NEXT TO A MENU ITEM    |" << endl;
 	cout << "                  |  FOLLOWED BY THE ENTER KEY.                                                 |" << endl;
-	cout << "                  |_____________________________________________________________________________|" << endl << endl;
+	cout << "                  |_____________________________________________________________________________|" << endl << endl << endl;
 
-	cout << "                  1. PLAY GAME!" << endl;
-	cout << "                  2. QUIT" << endl << endl;
+	cout << "                                 ________________              ________________                 " << endl;
+	cout << "                                /                \\            /                \\                " << endl;
+	cout << "                               |  1. PLAY GAME!   |          |     2. QUIT      |               " << endl;
+	cout << "                                \\________________/            \\________________/                " << endl;
 }

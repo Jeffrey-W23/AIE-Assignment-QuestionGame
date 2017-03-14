@@ -46,24 +46,25 @@ void Game::MainFunction()
 		cout << "                  _______________________________________________________________________________" << endl;
 		cout << "                  |                                                                             |" << endl;
 		cout << "                  |  HELLO AND WELCOME TO GUESS ME NUMBER!                                      |" << endl;
-		cout << "                  |  PLEASE PICK A NUMBER BETWEEN 1-99 AND KEEP IT TO YOURSELF.                 |" << endl;
+		cout << "                  |  PLEASE PICK A NUMBER BETWEEN 1 AND 99 AND KEEP IT TO YOURSELF.             |" << endl;
 		cout << "                  |  LETS BEGIN..                                                               |" << endl;
 		cout << "                  |_____________________________________________________________________________|" << endl << endl << endl << endl;
 
 		PrintNumber(guess);
 
 		cout << endl << endl;
-		cout << "                  Is ye number.." << endl;
-		cout << "                  1. Higher?" << endl;
-		cout << "                  2. Lower?" << endl;
-		cout << "                  3. This is me number!" << endl;
+		cout << "                  IS YE NUMBER.." << endl;
+		cout << "                  1. HIGHER?" << endl;
+		cout << "                  2. LOWER?" << endl;
+		cout << "                  3. THIS IS ME NUMBER!" << endl;
 
 		if (maxNumber == minNumber + 1)
 		{
 			cout << endl << endl;
-			cout << "                  ye number mustn't be between 1-99. Anyway the computer took " << tryCount << " tries to figure that out." << endl << endl << endl;
+			cout << "                  YE NUMBER MUSTN'T BE BETWEEN 1 AND 99. ANYWAY THE COMPUTER TOOK " << endl;
+			cout << "                  " << tryCount << " TRIES TO FIGURE THAT OUT." << endl << endl << endl;
 			guessing = false;
-			cout << "                  Press any key to continue..." << endl;
+			cout << "                  PRESS ANY KEY TO CONTINUE..." << endl;
 			_getch();
 		}
 
@@ -86,18 +87,17 @@ void Game::MainFunction()
 		else if (userInput == 3)
 		{
 			cout << endl << endl;
-			cout << "                  The computer guessed ye number in " << tryCount << " tries." << endl << endl << endl;
+			cout << "                  THE COMPUTER GUESSED YE NUMBER IN " << tryCount << " TRIES." << endl << endl << endl;
 			guessing = false;
-			cout << "                  Press any key to continue..." << endl;
+			cout << "                  PRESS ANY KEY TO CONTINUE..." << endl;
 			_getch();
 		}
 		else
 		{
 			cout << endl << endl;
-			cout << "                  Please take this seriously, make a valid choice of" << endl;
-			cout << "                  higher, lower or This is my number." << endl << endl << endl;
-			
-			cout << "                  Press any key to continue..." << endl;
+			cout << "                  PLEASE TAKE THIS SERIOUSLY, MAKE A VALID CHOICE OF" << endl;
+			cout << "                  1. HIGHER, 2. LOWER OR 3. THIS IS ME NUMBER." << endl << endl << endl;
+			cout << "                  PRESS ANY KEY TO CONTINUE..." << endl;
 			_getch();
 		}
 
