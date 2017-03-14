@@ -3,12 +3,15 @@
 #include <vector>
 #include <ctime>
 #include "Game.h"
-
 #include "ASCII.h"
-
+#include <conio.h>
 using namespace std;
 
 Game::Game()
+{
+}
+
+Game::~Game()
 {
 }
 
@@ -25,7 +28,7 @@ int Game::NextGuess(int minNumber, int maxNumber)
 void Game::MainFunction()
 {
 	srand(time(0));
-	int guess = rand() % 99;
+	int guess = rand() % 100 + 1;
 	int userInput;
 	int tryCount = 0;
 	int minNumber = 0;
@@ -33,19 +36,36 @@ void Game::MainFunction()
 	bool guessing = true;
 
 	system("cls");
-
-	cout << "Hello and welcome to Guess Me Number!" << endl;
-	cout << "Please pick a number bettween 1-99 and keep it to yourself" << endl;
-	cout << "Lets begin.." << endl << endl;
 	
 	while (guessing)
 	{
+		cout << "                                                                                                 " << endl;
+		cout << "                                                                                                 " << endl;
+		cout << "                                                                                                 " << endl;
+		cout << "                                                                                                 " << endl;
+		cout << "                  _______________________________________________________________________________" << endl;
+		cout << "                  |                                                                             |" << endl;
+		cout << "                  |  HELLO AND WELCOME TO GUESS ME NUMBER!                                      |" << endl;
+		cout << "                  |  PLEASE PICK A NUMBER BETWEEN 1-99 AND KEEP IT TO YOURSELF.                 |" << endl;
+		cout << "                  |  LETS BEGIN..                                                               |" << endl;
+		cout << "                  |_____________________________________________________________________________|" << endl << endl << endl << endl;
+
 		PrintNumber(guess);
 
-		cout << endl << endl << "Is ye number.." << endl;
-		cout << "1. Higher?" << endl;
-		cout << "2. Lower?" << endl;
-		cout << "3. This is me number!" << endl;
+		cout << endl << endl;
+		cout << "                  Is ye number.." << endl;
+		cout << "                  1. Higher?" << endl;
+		cout << "                  2. Lower?" << endl;
+		cout << "                  3. This is me number!" << endl;
+
+		if (maxNumber == minNumber + 1)
+		{
+			cout << endl << endl;
+			cout << "                  ye number mustn't be between 1-99. Anyway the computer took " << tryCount << " tries to figure that out." << endl << endl << endl;
+			guessing = false;
+			cout << "                  Press any key to continue..." << endl;
+			_getch();
+		}
 
 		cin >> userInput;
 		cin.clear();
@@ -65,40 +85,25 @@ void Game::MainFunction()
 		}
 		else if (userInput == 3)
 		{
-			cout << "The computer guessed ye number in " << tryCount << " tries.";
+			cout << endl << endl;
+			cout << "                  The computer guessed ye number in " << tryCount << " tries." << endl << endl << endl;
 			guessing = false;
-			cin;
+			cout << "                  Press any key to continue..." << endl;
+			_getch();
 		}
 		else
 		{
-			cout << endl << "Please take this seriously, make a valid choice of higher, lower or This is my number." << endl << endl;
-			cout << "Enter any value you want to return." << endl;
-			cin >> userInput;
-			cin.clear();
-			cin.ignore(999999, '\n');
+			cout << endl << endl;
+			cout << "                  Please take this seriously, make a valid choice of" << endl;
+			cout << "                  higher, lower or This is my number." << endl << endl << endl;
+			
+			cout << "                  Press any key to continue..." << endl;
+			_getch();
 		}
 
 		system("cls");
 	}
 }
 
-Game::~Game()
-{
-}
-
-
-
-//NOTES
-// do classes right, sperate vars?
-// go through all the lectures we have an make sure im doing every practise right
-// possibly seperate the program more
-
-// stop it from guessing 00 randomly.
-// once the computer has no more options end the game dont count the moves.
-// possibly have an amount of a turns the computer has to do it in to get a win
 // add music with beeps
-
-//GOOGLE
-//C++ moving the cusor in windows console
-//center everything on the consolo c++
 

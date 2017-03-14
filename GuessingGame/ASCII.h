@@ -60,7 +60,7 @@ const char* ASCIIList[10][6] =
 		{ " / /_   " },
 		{ "| '_ \\  " },
 		{ "| (_) | " },
-		{ " \___/  " }
+		{ " \\___/  " }
 	},
 	{
 		{ " ______ " },
@@ -98,6 +98,7 @@ void PrintNumber(int number)
 
 	const char** digit = ASCIIList[dig1];
 	const char** digit2 = ASCIIList[dig2];
+	const char* spaces = "                                                 ";
 
 	char* digit3[6]; // new array to put the ascii value in
 
@@ -106,9 +107,11 @@ void PrintNumber(int number)
 	{
 		int length = strlen(digit[i]);
 		int length2 = strlen(digit2[i]);
+		int length3 = strlen(spaces);
 
-		digit3[i] = new char[length + length2 + 1];
-		strcpy(digit3[i], digit[i]);
+		digit3[i] = new char[length + length2 + length3 + 1];
+		strcpy(digit3[i], spaces);
+		strcat(digit3[i], digit[i]);
 		strcat(digit3[i], digit2[i]);
 	}
 
@@ -116,5 +119,6 @@ void PrintNumber(int number)
 	for (int i = 0; i < 6; ++i)
 	{
 		cout << digit3[i] << endl;
+		delete[] digit3[i];
 	}
 }
