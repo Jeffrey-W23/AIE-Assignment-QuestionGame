@@ -1,12 +1,1 @@
-﻿  Source.cpp
-  MainMenu.cpp
-  Game.cpp
-c:\users\s171043\documents\github\aie-assignment-questiongame\guessinggame\ascii.h(113): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\s171043\documents\github\aie-assignment-questiongame\guessinggame\ascii.h(114): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
-c:\users\s171043\documents\github\aie-assignment-questiongame\guessinggame\ascii.h(115): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
-c:\users\s171043\documents\github\aie-assignment-questiongame\guessinggame\game.cpp(30): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-  GuessingGame.vcxproj -> C:\Users\s171043\Documents\GitHub\AIE-Assignment-QuestionGame\Debug\GuessingGame.exe
+﻿  GuessingGame.vcxproj -> C:\Users\s171043\Documents\GitHub\AIE-Assignment-QuestionGame\Debug\GuessingGame.exe
