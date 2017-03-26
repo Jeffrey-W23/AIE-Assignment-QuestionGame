@@ -1,44 +1,56 @@
+//#include, using etc
+#include "Game.h"
 #include <iostream>
 #include <string>
 #include <vector>
 #include <ctime>
-#include "Game.h"
 #include "ASCII.h"
 #include <conio.h>
 using namespace std;
 
+// Default Constructor
 Game::Game()
 {
+	// initialize
+	guess = 0;
+	userInput = 0;
+	tryCount = 0;
+	minNumber = 0;
+	maxNumber = 100;
+	guessing = true;
 }
 
+// Default Destructor
 Game::~Game()
 {
 }
 
+// Guess function returning a binary search
 int Game::NextGuess(int minNumber, int maxNumber)
 {
+	// Binary search
+	// works out the middle between 2 numbers
 	int diff;
-
 	diff = maxNumber - minNumber;
 	int number = minNumber + (diff / 2);
 
+	// returns the computers guess
 	return number;
 }
 
+// Main game function
 void Game::MainFunction()
 {
-	srand(time(0));
-	int guess = rand() % 100 + 1;
-	int userInput;
-	int tryCount = 0;
-	int minNumber = 0;
-	int maxNumber = 100;
-	bool guessing = true;
+	// start the game with a random guess from the computer
+	guess = rand() % 100 + 1;
 
+	// clear the screen for the game UI
 	system("cls");
 	
+	// Start guessing loop
 	while (guessing)
 	{
+		// display game UI
 		cout << "                                                                                                 " << endl;
 		cout << "                                                                                                 " << endl;
 		cout << "                                                                                                 " << endl;
@@ -50,14 +62,17 @@ void Game::MainFunction()
 		cout << "                  |  LETS BEGIN..                                                               |" << endl;
 		cout << "                  |_____________________________________________________________________________|" << endl << endl << endl << endl;
 
+		// print ascii art number
 		PrintNumber(guess);
 
+		// display input options for the user
 		cout << endl << endl;
 		cout << "                  IS YE NUMBER.." << endl;
 		cout << "                  1. HIGHER?" << endl;
 		cout << "                  2. LOWER?" << endl;
 		cout << "                  3. THIS IS ME NUMBER!" << endl;
 
+		// check to make sure the user isnt cheating
 		if (maxNumber == minNumber + 1)
 		{
 			cout << endl << endl;
@@ -68,22 +83,28 @@ void Game::MainFunction()
 			_getch();
 		}
 
+		// get the users input
 		cin >> userInput;
 		cin.clear();
 		cin.ignore(999999, '\n');
 
+		// tell the computer the users number is lower
 		if (userInput == 1)
 		{
 			tryCount++;
 			minNumber = guess;
 			guess = NextGuess(minNumber, maxNumber);
 		}
+
+		// tell the computer the users number is higher
 		else if (userInput == 2)
 		{
 			tryCount++;
 			maxNumber = guess;
 			guess = NextGuess(minNumber, maxNumber);
 		}
+
+		// Finish the game. the computer has guessed the number
 		else if (userInput == 3)
 		{
 			cout << endl << endl;
@@ -92,6 +113,8 @@ void Game::MainFunction()
 			cout << "                  PRESS ANY KEY TO CONTINUE..." << endl;
 			_getch();
 		}
+
+		// make sure the user is inputing correct menu options
 		else
 		{
 			cout << endl << endl;
@@ -104,6 +127,3 @@ void Game::MainFunction()
 		system("cls");
 	}
 }
-
-// add music with beeps
-

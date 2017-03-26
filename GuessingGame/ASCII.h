@@ -1,9 +1,9 @@
+//#include, using etc
 #pragma once
-
 #include <iostream>
-
 using namespace std;
 
+// Create a list of ascii art numbers
 const char* ASCIIList[10][6] = 
 {
 	{
@@ -88,19 +88,23 @@ const char* ASCIIList[10][6] =
 	},
 };
 
-//Function to print 1 digit
-//Function to split number into its digits so 321 becomes 3, 2 and 1. Then call print digit on each one.
-//PrintNumber(31)
+
+// Function to print a asci art number
 void PrintNumber(int number)
 {
+	// Seperate the first and second digit
 	int dig1 = (number / 10); //eg. number is 45 then dig1 is 4	
 	int dig2 = (number % 10); //eg. number is 45 then dig2 is 5
 
+	// Create an array for each digit
 	const char** digit = ASCIIList[dig1];
 	const char** digit2 = ASCIIList[dig2];
+	
+	// spaces for the front of the asci art to get it in the center of the screen when the user sees it
 	const char* spaces = "                                                 ";
 
-	char* digit3[6]; // new array to put the ascii value in
+	// Creating a new array to store the 2 digits side by side
+	char* digit3[6];
 
 	// one at a time move them to the new array
 	for (int i = 0; i < 6; i++)
@@ -115,7 +119,7 @@ void PrintNumber(int number)
 		strcat(digit3[i], digit2[i]);
 	}
 
-	// draw art from top to bottom
+	// draw art from top to bottom then delete
 	for (int i = 0; i < 6; ++i)
 	{
 		cout << digit3[i] << endl;

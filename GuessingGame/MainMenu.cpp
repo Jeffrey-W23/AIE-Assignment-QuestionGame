@@ -1,44 +1,49 @@
-#include <iostream>
+//#include, using etc
 #include "MainMenu.h"
-#include <conio.h>
-#include <stdio.h>
-#include <windows.h>
-using namespace std;
 
+// Default Constructor
 MainMenu::MainMenu()
 {
 }
 
+// Default Destructor
 MainMenu::~MainMenu()
 {
 }
 
+// Menu function. Runs the logic of the main menu
 bool MainMenu::StartMenu()
 {
-	int menuOption;
-
+	// display menu
 	PrintMenu();
 
+	// play game start up song
 	Beep(587, 500);
 	Beep(659, 500);
 	Beep(698, 500);
 	Beep(784, 500);
 
+	// ask for input from the player for which menu option they would like.
 	cin >> menuOption;
 	cin.clear();
 	cin.ignore(999999, '\n');
 	cout << endl;
 
+	// Start the game
 	if (menuOption == 1)
 	{
 		game.MainFunction();
 		menuOption = 0;
 		return true;
 	}
+
+	// Quit the program
 	else if (menuOption == 2)
 	{
 		return false;
 	}
+
+	// make sure the user only has the 2 options
 	else
 	{
 		cout << "                  PLEASE ENTER A VALID MENU OPTION DUDE, THIS ISN'T A GAME." << endl << endl;
@@ -48,6 +53,7 @@ bool MainMenu::StartMenu()
 	}
 }
 
+// Display fucntion for menu
 void MainMenu::PrintMenu()
 {
 	system("cls");

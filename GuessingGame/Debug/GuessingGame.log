@@ -1,1 +1,9 @@
-﻿  GuessingGame.vcxproj -> C:\Users\s171043\Documents\GitHub\AIE-Assignment-QuestionGame\Debug\GuessingGame.exe
+﻿  Game.cpp
+c:\users\thomas wiltshire\desktop\pc\github\aie-assignment-questiongame\guessinggame\ascii.h(117): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\thomas wiltshire\desktop\pc\github\aie-assignment-questiongame\guessinggame\ascii.h(118): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+c:\users\thomas wiltshire\desktop\pc\github\aie-assignment-questiongame\guessinggame\ascii.h(119): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+  GuessingGame.vcxproj -> C:\Users\Thomas Wiltshire\Desktop\Pc\GitHub\AIE-Assignment-QuestionGame\Debug\GuessingGame.exe
+  GuessingGame.vcxproj -> C:\Users\Thomas Wiltshire\Desktop\Pc\GitHub\AIE-Assignment-QuestionGame\Debug\GuessingGame.pdb (Full PDB)
